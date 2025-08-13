@@ -1,0 +1,329 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Layout */
+  .app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 350px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .project-list {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .project-card {
+    background-color: #34495e;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .project-card:hover {
+    background-color: #3e5c78;
+  }
+  
+  #add-project-btn {
+    background-color: #6ec6cb;
+    color: #30382f;
+    margin-left:5%;
+    max-width: 130px;
+    border-radius: 10px;
+  }
+  
+  /* Content */
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #add-todo-btn {
+    background-color: #2980b9;
+    color: white;
+    margin-right: 15%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  
+  /* Main area */
+  .main {
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  #todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* space between todos */
+    padding: 16px;
+    align-items: center;
+  }
+  
+  /* Todo card */
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    min-height: 120px;
+    width: 80%;
+  }
+
+  .todo-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1; /* so text wraps nicely */
+  }
+
+  .todo-left input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-top: 4px; /* align with text top */
+  }
+
+  .todo-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* space between title, desc, date */
+  }
+
+  .todo-texts h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .todo-texts p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+.todo-texts p strong {
+  font-weight: 600;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+  
+.todo-actions svg {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  fill: #555;
+}
+
+.todo-actions svg:hover {
+  fill: #000;
+}
+
+/* Completed state */
+.todo.completed {
+  background: #f2ecff; /* subtle lavender */
+}
+.checkbox{
+  cursor: pointer;
+}
+
+.todo.completed .todo-texts {
+  text-decoration: line-through;
+  color: gray;
+}
+ 
+  /* Forms */
+  #project-form,
+  .todo-form {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+  }
+  
+  #project-form input,
+  .todo-form input,
+  .todo-form textarea,
+  .todo-form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .form-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .save {
+    background-color: #27ae60;
+    color: white;
+  }
+  .save:hover {
+    background-color: #5b7e6a;
+  }
+  
+  #cancel-todo-btn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+  }
+  #cancel-todo-btn:hover {
+    background-color: #869db4;
+  }
+  /* Button shared style */
+  .btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  .todo svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+.check {
+    fill: #27ae60;
+  }
+  
+  .check:hover {
+    fill: #2ecc71;
+  }
+  
+  .delete {
+    fill: #e74c3c;
+  }
+  
+  .delete:hover {
+    fill: #c0392b;
+  }
+  
+  .edit-svg {
+    fill: #f39c12;
+  }
+
+.edit-svg:hover {
+    fill: #e67e22;
+  }
+  .save-btn{
+    background-color: #27ae60;
+    color: white;
+  }
+  .save-btn:hover {
+    ackground-color: #5b7e6a;
+  }
+  #cancel-project-btn{
+    background-color: #bdc3c7;
+    color: #2c3e50;
+  }
+  #cancel-project-btn:hover {
+    background-color: #869db4;
+  }
+  .project-btns{
+    display: flex;
+    justify-content: center;
+    gap:0.5rem;
+  }
+  .project-btns, button{
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .projects{
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddfef8;
+    background-color: #23194f;;
+  }
+  .projects:hover {
+    background: #30382f;
+  }
+
+  .svg-container{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+ 
+  .delete-project{
+    fill: #cf0f4f;
+    cursor: pointer;
+  }
+  .delete-project:hover {
+    fill: #db5a0f;
+  }
